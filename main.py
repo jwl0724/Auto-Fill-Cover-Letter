@@ -1,16 +1,25 @@
 import sys
 import fileParser as fp
-
+import datetime
 
 def main():
-    docx_file = fp.create_document_object(sys.argv[1])
-    if not docx_file:
-        print("Could not open file")
+    try:
+        parser = fp.parser(sys.argv[1])
+    except FileNotFoundError:
+        print(f"{sys.argv[1]} could not be found, exiting program")
         return
+    parser.set_marked_field("date", get_current_date())
+    parser.replace_marked_fields()
+    parser.save(f"filled_{sys.argv[1]}")
     
-    fp.replace_marked_fields(docx_file, "test")
-    fp.save_document_object(docx_file, f"copy_{sys.argv[1]}")
-    
+
+def get_current_date():
+    date = datetime.datetime.now()
+    month = date.strftime("%B")
+    day = date.strftime("%d")
+    year = date.strftime("%Y")
+    return f"{month} {day}, {year}"
+
 
 if __name__ == "__main__":
     main()
