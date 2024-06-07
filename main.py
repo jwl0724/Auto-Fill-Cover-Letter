@@ -1,8 +1,13 @@
 import sys
 import fileParser as fp
+import GUI as gui
 import datetime
 
 def main():
+    window = gui.screen(600, 300)
+    window.add_label("Cover Letter Autofiller", 300, 150, "h1")
+    window.run()
+
     try:
         parser = fp.parser(sys.argv[1])
     except FileNotFoundError:
