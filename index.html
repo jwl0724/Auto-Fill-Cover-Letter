@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
@@ -17,12 +18,12 @@
         <img src="/assets/icon.png" class="w-12 h-12" alt="site icon">
         <p class="uppercase text-2xl font-semibold select-none">Online Cover Letter Autofiller</p>
     </nav>
-    <section class="">
+    <section>
         <p class="px-2 py-1 text-lg">Autofill marked sections on a cover letter template</p>
         <p class="uppercase font-bold text-blue-300 px-2 text-lg">How to Use</p>
         <p class="px-2">
             In your .docx file, mark sections that need to be replaced with [%= filler =%],
-            inside the marker put in a description of what is supposed to be filled in that section.
+            inside the markers put in a description of what is supposed to be filled in that section.
             To see an example of proper formatting
             <span id="openExample" class="underline text-blue-500 cursor-pointer hover:text-blue-300">click here</span>
         </p>
@@ -33,6 +34,27 @@
             </div>
         </dialog>
     </section>
-        
+    <section class="flex justify-between mx-2 mt-3">
+        <!-- Upload File Section -->
+        <div class="bg-blue-800 px-2 py-2 w-1/2 mr-2">
+            <div class="uppercase text-medium">
+                <span class="bg-blue-500 px-2 py-1 text-zinc-100 select-none">docx file</span>
+            </div>
+            <div id="dropzoneUI" class="flex items-center justify-center w-full">
+                <label for="dropzone" class="flex flex-col items-center justify-center w-full border-4 border-dashed border-blue-400 p-6 px-10 mt-3 text-zinc-100 cursor-pointer hover:bg-blue-700 bg-blue-900">
+                    <span class="material-symbols-outlined select-none">upload</span>
+                    <p class="mb-2"><span class="font-bold">Click to Upload</span> or drag and drop</p>
+                    <p class="text-sm">doc or docx</p>
+                    <input id="dropzone" type="file" class="hidden">
+                </label>
+            </div>
+        </div>
+        <!-- Preview Section -->
+        <div class="bg-blue-800 px-2 py-2 ml-2 w-1/2">
+            <div class="uppercase text-medium select-none">
+                <span class="bg-blue-500 px-2 py-1 text-zinc-100">preview</span>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
