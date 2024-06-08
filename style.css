@@ -2,3 +2,8 @@ body {
     font-family: "Pixelify Sans", sans-serif;
     letter-spacing: 2px;
 }
+
+#example::backdrop {
+    backdrop-filter: blur(1px);
+    background-color: rgba(0, 0, 0, 0.6);
+}
