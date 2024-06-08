@@ -53,7 +53,6 @@ function displayUploadedFile() {
 
 // checks if input is correct
 function checkValidity(fileList) {
-    console.log(fileList.constructor.name)
     if (file !== null) return false;
     if (!fileList) return false;
     if (fileList.length !== 1) return false;
