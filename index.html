@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/assets/iconV2.png">
+    <link rel="icon" type="image/x-icon" href="/assets/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
@@ -15,22 +15,24 @@
 <body class="bg-zinc-950 text-zinc-100">
     <nav class="flex items-center bg-blue-800 text-zinc-100 p-1 py-2">
         <img src="/assets/icon.png" class="w-12 h-12" alt="site icon">
-        <p class="uppercase text-2xl font-semibold">Online Cover Letter Autofiller</p>
+        <p class="uppercase text-2xl font-semibold select-none">Online Cover Letter Autofiller</p>
     </nav>
     <section class="">
-        <p class="">This app is designed to replace sections of your cover letter template.</p>
-        <div class="">
-            <div class="">
-                <p class="uppercase">How to Use</p>
-                <p class="">
-                    In your .docx file, mark sections that need to be replaced with [%= description here =%],
-                    inside the marker put in a description of what is supposed to be filled in that section.
-                    For an example, see the .docx file seen on the right for proper usage.
-                </p>
+        <p class="px-2 py-1 text-lg">Autofill marked sections on a cover letter template</p>
+        <p class="uppercase font-bold text-blue-300 px-2 text-lg">How to Use</p>
+        <p class="px-2">
+            In your .docx file, mark sections that need to be replaced with [%= filler =%],
+            inside the marker put in a description of what is supposed to be filled in that section.
+            To see an example of proper formatting
+            <span id="openExample" class="underline text-blue-500 cursor-pointer hover:text-blue-300">click here</span>
+        </p>
+        <dialog id="example" class="px-10 pt-10 py-5 bg-blue-800 rounded-lg backdrop-blur-xl">
+            <div class="flex flex-col">
+                <img src="/assets/example.png" class="rounded-lg">
+                <button id="closeModal" class="mt-5 bg-zinc-100 font-medium text-xl border-4 border-zinc-400 rounded-lg px-5 outline-none mx-auto hover:border-zinc-100 hover:bg-zinc-300">Close</button>
             </div>
-            <img src="/assets/example.png">
-        </div>
+        </dialog>
     </section>
-    
+        
 </body>
 </html>
